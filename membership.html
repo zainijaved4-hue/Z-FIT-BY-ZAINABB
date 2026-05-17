@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %}Membership — Z FIT BY ZAINAB{% endblock %}
+
+{% block content %}
+
+<!-- PAGE HERO -->
+<section class="page-hero membership-hero">
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <p class="hero-eyebrow">Invest In Yourself</p>
+    <h1>Membership <span>Plans</span></h1>
+    <p>Choose the plan that fits your goals. Upgrade anytime.</p>
+  </div>
+</section>
+
+<!-- PLANS SECTION -->
+<section class="section plans-section">
+  <div class="section-header">
+    <p class="section-tag">Pricing</p>
+    <h2>Flexible Plans for <span>Every Goal</span></h2>
+  </div>
+  <div class="plans-grid">
+    {% for plan in plans %}
+    <div class="plan-card {% if plan.tag == 'Most Popular' %}plan-featured{% endif %}">
+      {% if plan.tag %}
+      <div class="plan-tag">{{ plan.tag }}</div>
+      {% endif %}
+      <h3 class="plan-name">{{ plan.name }}</h3>
+      <div class="plan-price">
+        <span class="price-num">{{ plan.price }}</span>
+        <span class="price-per">{{ plan.period }}</span>
+      </div>
+      <ul class="plan-features">
+        {% for feature in plan.features %}
+        <li><span>✓</span> {{ feature }}</li>
+        {% endfor %}
+      </ul>
+      <a href="#" class="btn-plan {% if plan.tag == 'Most Popular' %}btn-plan-featured{% endif %}">{{ plan.cta }}</a>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section class="section services-section">
+  <div class="section-header">
+    <p class="section-tag">What We Offer</p>
+    <h2>Included <span>Services</span></h2>
+  </div>
+  <div class="services-grid">
+    {% for svc in services %}
+    <div class="service-card">
+      <div class="svc-icon">{{ svc.icon }}</div>
+      <h3>{{ svc.name }}</h3>
+      <p>{{ svc.desc }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- FAQ STRIP -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <p class="section-tag">Common Questions</p>
+    <h2>FAQs</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <strong>Can I freeze my membership?</strong>
+        <p>Yes — you can freeze for up to 2 months per year with a 48-hour notice.</p>
+      </div>
+      <div class="faq-item">
+        <strong>Is there a joining fee?</strong>
+        <p>No joining fees for any plan. What you see is what you pay.</p>
+      </div>
+      <div class="faq-item">
+        <strong>Do you offer student discounts?</strong>
+        <p>Yes! Present a valid student ID for 15% off the Starter plan.</p>
+      </div>
+      <div class="faq-item">
+        <strong>Can I try before I commit?</strong>
+        <p>Absolutely — your first class is complimentary. No strings attached.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
