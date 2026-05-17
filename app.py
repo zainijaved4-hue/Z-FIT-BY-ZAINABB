@@ -15,7 +15,7 @@ def home():
 @app.route('/about')
 def about():
     team = [
-        {"name": "Zainab Khan", "role": "Founder & Head Coach", "bio": "NASM-certified trainer with 10+ years transforming lives through fitness."},
+        {"name": "Zainab Javed", "role": "Founder & Head Coach", "bio": "NASM-certified trainer with 10+ years transforming lives through fitness."},
         {"name": "Sara Ahmed", "role": "Nutrition Specialist", "bio": "Registered dietitian crafting personalised meal plans for peak performance."},
         {"name": "Ali Raza", "role": "Strength Coach", "bio": "Former competitive powerlifter bringing elite technique to every session."},
         {"name": "Hira Baig", "role": "Yoga & Mindfulness", "bio": "500-hour certified instructor blending movement with mental wellness."},
